@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keithston Coffee Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Sansita Swashed',  sans-serif; margin: 0; scroll-behavior: smooth; }
+        .product-title { font-family: 'Sansita Swashed', sans-serif; }
+        
+        /* ส่วน Hero เต็มหน้าจอ */
+        .hero-section {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/bg1.png'); /* เปลี่ยน URL รูปตรงนี้ */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .bg-stone-texture {
+        /* เพิ่มคำสั่ง 3 บรรทัดด้านล่างนี้ */
+         background-repeat: no-repeat;    /* ห้ามแสดงซ้ำ */
+        background-size: cover;          /* ยืดรูปให้คลุมพื้นที่ทั้งหมด */
+        background-position: center;     /* จัดรูปให้อยู่ตรงกลางเสมอ */
+    
+        /* ส่วนเดิมของคุณ (Linear Gradient + Texture) */
+                        background-image: url('./images/bg2.png'), 
+                      linear-gradient(to bottom, #1a1a1a, #000000);
+        }
+        /* ตกแต่ง Banner */
+        .promo-banner {
+        width: 100%;
+        min-height: 400px;
+        background-color: #f8f8f8; /* สีพื้นหลังสำรอง */
+        background-image: url('./images/bg3.png'); /* เปลี่ยน URL รูปตรงนี้ */
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+        font-family: 'Arial', sans-serif; /* หรือเลือก Font ที่ใกล้เคียง */
+        }
+
+        .banner-content {
+        max-width: 600px;
+        }
+
+        .banner-title {
+        color: #8B4513; /* สีน้ำตาลเข้มตามรูป */
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-style: italic;
+        }
+
+        .banner-text {
+        color: #555;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        }
+
+        .banner-btn {
+        background-color: #8B4513; /* สีปุ่มน้ำตาลแดง */
+        color: white;
+        text-decoration: none;
+        padding: 12px 35px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: background 0.3s ease;
+        display: inline-block;
+        }
+
+        .banner-btn:hover {
+        background-color: #A0522D; /* สีเมื่อเอาเมาส์ไปวาง */
+        }
+
+        /* ปรับขนาดตัวอักษรสำหรับหน้าจอมือถือ */
+        @media (max-width: 768px) {
+        .banner-title {
+            font-size: 2rem;
+        }
+        .banner-text {
+            font-size: 1rem;
+        }
+        .banner-btn {
+            font-size: 1rem;
+            padding: 10px 25px;
+            }
+    }
+    </style>
+    </head>
+    <body>
+    <header class="hero-section text-white">
+        <nav class="flex justify-between items-center px-10 py-6">
+            <div class="flex items-center gap-3">
+                <img src="./images/logo.png" alt="Keithston Logo" class="w-28 h-28 object-contain">
+            </div>
+             <ul class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+                <li><a href="#" class="hover:text-orange-400">Home</a></li>
+                <li><a href="#" class="hover:text-orange-400">Blog</a></li>
+                <li><a href="#" class="hover:text-orange-400">Contact Us</a></li>
+                <li><a href="#" class="hover:text-orange-400">Services</a></li>
+            </ul>
+        </nav>
+
+        <div class="flex-grow flex flex-col justify-center px-10 md:px-20">
+            <p class="text-lg mb-2">Delicious Cafe</p>
+            <h1 class="text-5xl md:text-7xl font-bold product-title mb-8 leading-tight">Sweet Treats,<br>Perfect Eats</h1>
+            <div class="flex gap-6 items-center">
+                <a href="#products" class="bg-[#8b4513] hover:bg-[#a0522d] px-8 py-3 rounded text-white font-semibold transition shadow-lg">Shop Now</a>
+                <a href="#products" class="text-white hover:text-orange-400 underline underline-offset-8">Learn More</a>
+            </div>
+        </div>
+    </header> 
+
+    <main id="products" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="product-title text-5xl text-center mb-20 text-black italic font-bold">Top Products</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                
+                <script>
+                    // ใช้ Loop สร้างการ์ด 6 ใบเพื่อไม่ให้โค้ดยาวเกินไป
+                    for (let i = 1; i <= 6; i++) {
+                        document.write(`
+                        <div class="bg-stone-texture rounded-xl p-8 flex flex-col justify-between min-h-[420px] shadow-2xl transition-transform hover:-translate-y-2">
+                            <div class="flex justify-center mt-4">
+                                <img src="./images/product${i}.png" class="w-48 h-48 object-contain drop-shadow-[0_20px_20px_rgba(255,255,255,0.1)]">
+                            </div>
+                            <div class="mt-8">
+                                <div class="flex justify-between items-center mb-5">
+                                    <span class="text-white text-2xl font-bold tracking-tight">40 Baht</span>
+                                    <button class="text-white/50 border border-white/20 rounded-full w-7 h-7 flex items-center justify-center text-[10px] italic">i</button>
+                                </div>
+                                <div class="flex justify-between items-end">
+                                    <h3 class="text-white/90 text-xl font-light leading-snug max-w-[150px]">Whole Grain Bread</h3>
+                                    <button class="bg-[#8b4513] hover:bg-[#a0522d] text-white px-7 py-2 rounded shadow-md transition-all active:scale-95 text-sm">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                        `);
+                    }
+                </script>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
+    <section class="promo-banner">
+        <div class="banner-content">
+            <h2 class="banner-title">20% Off Your First Order</h2>
+            <p class="banner-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nesciunt rem.
+            </p>
+            <a href="#" class="banner-btn">Learn More</a>
+        </div>
+    </section>
