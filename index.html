@@ -93,7 +93,235 @@
             font-size: 1rem;
             padding: 10px 25px;
             }
-    }
+        }
+        /* พื้นฐานสำหรับทั้งหน้า (แนะนำให้ใส่) */
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif; /* ฟอนต์เริ่มต้นสำหรับเนื้อหา */
+        background-color: #f4f4f4; /* สีพื้นหลังหน้าเว็บ (ปรับเปลี่ยนได้) */
+        }
+
+        /* กำหนดคอนเทนเนอร์หลัก */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ตกแต่งส่วน Featured Treats */
+        .featured-treats {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        /* หัวข้อ Featured Treats */
+        .section-title {
+            font-family: 'Sansita Swashed', SemiBold; /* ฟอนต์หัวข้อสไตล์ Serif */
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+
+        /* จัดรูปแบบกริด 3 คอลัมน์ */
+        .treats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px; /* ระยะห่างระหว่างกล่องขนม */
+        }
+
+        /* จัดรูปแบบกล่องขนมแต่ละชิ้น */
+        .treat-item {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* เพิ่มเงาเบาๆ */
+        }
+
+        /* จัดรูปแบบรูปภาพให้พอดีกล่อง */
+        .treat-image-wrapper {
+            width: 100%;
+            padding-top: 100%; /* รักษาอัตราส่วนภาพเป็นสี่เหลี่ยมจัตุรัส */
+            position: relative;
+            background-color: #333; /* สีพื้นหลังภาพเมื่อยังโหลดไม่เสร็จ */
+        }
+
+        .treat-image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่ทั้งหมด */
+        }
+
+        /* จัดรูปแบบรายละเอียดชื่อและราคา */
+        .treat-details {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .treat-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .treat-price {
+            font-size: 1.1rem;
+            color: #777;
+            font-weight: bold;
+        }
+
+        /* สำหรับมือถือ */
+            @media (max-width: 768px) {
+            .treats-grid {
+            grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        .main-footer {
+        /*background-color: #1a1a1a;  สีพื้นหลังดำเข้ม */
+        background-image:url('./images/bg4.png'); 
+        background-size: cover;
+        color: #ffffff;
+        padding: 60px 0 20px;
+        font-family: 'Arial', sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Footer Top */
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #d4a373; /* สีทอง/น้ำตาลอ่อน */
+        }
+
+        .footer-logo span {
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #d4a373;
+            font-size: 1.5rem;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        .footer-divider {
+            border: 0;
+            border-top: 1px solid #333;
+            margin-bottom: 40px;
+        }
+
+        /* Footer Grid */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            color: #d4a373;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+        .footer-col p, .footer-col ul li {
+            color: #ccc;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        /* Recent News Item */
+        .news-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .news-item img {
+            width: 70px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .news-text span {
+            font-size: 0.8rem;
+            color: #d4a373;
+        }
+
+        .news-text p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Copyright */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .footer-logo img {
+            /* ปรับขนาดความกว้างที่คุณต้องการ (เช่น 50px หรือ 40px) */
+            width: 166px; 
+            height: 166px; 
+            
+            width: 166px; 
+            height: 166px; 
+        
+            object-fit: contain; 
+        }
     </style>
     </head>
     <body>
@@ -165,3 +393,105 @@
             <a href="#" class="banner-btn">Learn More</a>
         </div>
     </section>
+
+    <section class="featured-treats">
+    <div class="container">
+        <h2 class="section-title">Featured Treats</h2>
+        
+        <div class="treats-grid">
+            <div class="treat-item">
+                <div class="treat-image-wrapper">
+                    <img src="./images/product7.png" alt="Puff Pastry">
+                </div>
+                <div class="treat-details">
+                    <span class="treat-name">Puff Pastry</span>
+                    <span class="treat-price">8 Baht</span>
+                </div>
+            </div>
+
+            <div class="treat-item">
+                <div class="treat-image-wrapper">
+                    <img src="./images/product8.png" alt="Doughnuts">
+                </div>
+                <div class="treat-details">
+                    <span class="treat-name">Doughnuts</span>
+                    <span class="treat-price">8 Baht</span>
+                </div>
+            </div>
+
+            <div class="treat-item">
+                <div class="treat-image-wrapper">
+                    <img src="./images/product9.png" alt="Brownies">
+                </div>
+                <div class="treat-details">
+                    <span class="treat-name">Brownies</span>
+                    <span class="treat-price">8 Baht</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="./images/logo2.png" alt="KEITHSTON">
+            </div>
+            <div class="footer-social">
+                <span>Follow us</span>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>(02) 807-4500</p>
+                <p>info@sau.ac.th</p>
+                <p>19/1 Phetkasem Road<br>Nongkham Bangkok 10160</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Recent News</h3>
+                <div class="news-item">
+                    <img src="./images/product9.png" alt="news">
+                    <div class="news-text">
+                        <span>June 14, 2025</span>
+                        <p>Puff pastry bliss.</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="./images/product10.png" alt="news">
+                    <div class="news-text">
+                        <span>June 14, 2025</span>
+                        <p>Puff pastry bliss.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bake House. All rights reserved</p>
+        </div>
+    </div>
+</footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
